@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+        content="Kenny Leung — media practitioner, editor, lecturer and maker of interactive cultural projects.">
+
+  <meta property="og:title" content="Kenny Leung — Media, Culture & Interactive Projects">
+  <meta property="og:description"
+        content="Media practitioner, editor, lecturer and maker of interactive cultural projects.">
+  <meta property="og:type" content="website">
+
+  <title>Kenny Leung — Media, Culture & Interactive Projects</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap"
+        rel="stylesheet">
+
+  <style>
+
+    :root {
+      --paper: #f4f2ec;
+      --ink: #171714;
+      --muted: #77756d;
+      --line: #d8d5cc;
+      --accent: #d84a32;
+      --card: #ebe9e1;
+      --white: #faf9f5;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Inter", sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* -------------------------
+       GLOBAL
+    ------------------------- */
+
+    .container {
+      width: min(1180px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    .mono {
+      font-family: "DM Mono", monospace;
+    }
+
+    .eyebrow {
+      font-family: "DM Mono", monospace;
+      font-size: 12px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* -------------------------
+       HEADER
+    ------------------------- */
+
+    header {
+      padding: 28px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: "DM Mono", monospace;
+      font-size: 14px;
+      letter-spacing: .04em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 26px;
+      font-size: 13px;
+    }
+
+    .nav-links a {
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 0;
+      height: 1px;
+      background: var(--ink);
+      transition: width .25s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* -------------------------
+       HERO
+    ------------------------- */
+
+    .hero {
+      padding: 105px 0 120px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 460px;
+      height: 460px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      right: -170px;
+      top: 20px;
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 270px;
+      height: 270px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      right: -75px;
+      top: 115px;
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.4fr .8fr;
+      gap: 80px;
+      align-items: end;
+    }
+
+    h1 {
+      font-family: "Playfair Display", serif;
+      font-weight: 500;
+      font-size: clamp(58px, 8vw, 112px);
+      line-height: .92;
+      letter-spacing: -.045em;
+      margin: 18px 0 0;
+      max-width: 850px;
+    }
+
+    .hero-note {
+      font-family: "DM Mono", monospace;
+      font-size: 12px;
+      line-height: 1.8;
+      max-width: 260px;
+      padding-bottom: 5px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-note span {
+      color: var(--accent);
+    }
+
+    /* -------------------------
+       ABOUT
+    ------------------------- */
+
+    .about {
+      border-top: 1px solid var(--line);
+      padding: 70px 0 105px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 70px;
+    }
+
+    .about-text {
+      max-width: 760px;
+      font-size: clamp(21px, 2.3vw, 30px);
+      line-height: 1.45;
+      letter-spacing: -.015em;
+    }
+
+    .about-text strong {
+      font-weight: 600;
+    }
+
+    .socials {
+      margin-top: 38px;
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .socials a {
+      font-family: "DM Mono", monospace;
+      font-size: 12px;
+      border-bottom: 1px solid var(--ink);
+      padding-bottom: 3px;
+    }
+
+    /* -------------------------
+       PROJECTS
+    ------------------------- */
+
+    .projects {
+      border-top: 1px solid var(--line);
+      padding: 70px 0 120px;
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 45px;
+    }
+
+    .section-heading h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(42px, 5vw, 68px);
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: -.035em;
+      margin: 0;
+    }
+
+    .project-group {
+      margin-bottom: 75px;
+    }
+
+    .group-label {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+
+    .group-label::after {
+      content: "";
+      height: 1px;
+      background: var(--line);
+      flex: 1;
+    }
+
+    .group-label span {
+      font-family: "DM Mono", monospace;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: var(--muted);
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .project {
+      display: block;
+      background: var(--card);
+      border: 1px solid transparent;
+      transition:
+        transform .3s ease,
+        border-color .3s ease,
+        background .3s ease;
+      overflow: hidden;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      border-color: var(--ink);
+      background: var(--white);
+    }
+
+    /* Project visual / thumbnail */
+
+    .project-image {
+      height: 280px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      padding: 25px;
+    }
+
+    .project-image::after {
+      content: "↗";
+      position: absolute;
+      top: 20px;
+      right: 22px;
+      font-family: "DM Mono", monospace;
+      font-size: 18px;
+      opacity: .55;
+      transition: transform .3s ease;
+    }
+
+    .project:hover .project-image::after {
+      transform: translate(4px, -4px);
+    }
+
+    .project-image .visual-title {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(32px, 4vw, 54px);
+      line-height: .95;
+      letter-spacing: -.04em;
+      max-width: 80%;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Individual visual identities */
+
+    .fourgor {
+      background:
+        linear-gradient(135deg, #181818 0%, #292621 60%, #5e5141 100%);
+      color: #f5f1e7;
+    }
+
+    .fourgor::before {
+      content: "164";
+      position: absolute;
+      right: -15px;
+      bottom: -65px;
+      font-family: "Playfair Display", serif;
+      font-size: 210px;
+      line-height: 1;
+      color: rgba(255,255,255,.07);
+    }
+
+    .kkbox {
+      background:
+        linear-gradient(135deg, #e8e6de 0%, #d4d0c4 100%);
+    }
+
+    .kkbox::before {
+      content: "365";
+      position: absolute;
+      right: 15px;
+      top: 30px;
+      font-family: "DM Mono", monospace;
+      font-size: 85px;
+      letter-spacing: -.08em;
+      opacity: .13;
+    }
+
+    .kkbox .visual-title {
+      font-family: "DM Mono", monospace;
+      font-size: 27px;
+      line-height: 1.05;
+    }
+
+    .ages {
+      background:
+        radial-gradient(circle at 75% 25%, rgba(255,255,255,.9), transparent 20%),
+        linear-gradient(145deg, #d9d3c5, #a69f90);
+    }
+
+    .ages::before {
+      content: "AGE";
+      position: absolute;
+      right: -20px;
+      top: 20px;
+      font-family: "Playfair Display", serif;
+      font-size: 120px;
+      line-height: .8;
+      opacity: .11;
+    }
+
+    .interactive {
+      background:
+        repeating-linear-gradient(
+          90deg,
+          #e7d5cf 0,
+          #e7d5cf 22px,
+          #d9c0b8 22px,
+          #d9c0b8 44px
+        );
+    }
+
+    .interactive::before {
+      content: "揮春";
+      position: absolute;
+      right: 35px;
+      top: 30px;
+      font-family: serif;
+      font-size: 90px;
+      writing-mode: vertical-rl;
+      opacity: .13;
+    }
+
+    .colour {
+      background:
+        conic-gradient(
+          from 210deg at 70% 40%,
+          #dce8e5,
+          #e8d9d4,
+          #e5e0c8,
+          #cbd9e6,
+          #dce8e5
+        );
+    }
+
+    .colour::before {
+      content: "POP";
+      position: absolute;
+      right: 20px;
+      bottom: -25px;
+      font-family: "Inter", sans-serif;
+      font-weight: 700;
+      font-size: 130px;
+      letter-spacing: -.09em;
+      opacity: .1;
+    }
+
+    .project-info {
+      padding: 23px 25px 27px;
+    }
+
+    .project-number {
+      font-family: "DM Mono", monospace;
+      font-size: 10px;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .project-title {
+      font-family: "Playfair Display", serif;
+      font-size: 28px;
+      line-height: 1.1;
+      margin-bottom: 10px;
+    }
+
+    .project-description {
+      color: #5f5d56;
+      font-size: 14px;
+      line-height: 1.65;
+      max-width: 560px;
+    }
+
+    .project-url {
+      margin-top: 18px;
+      font-family: "DM Mono", monospace;
+      font-size: 10px;
+      color: var(--muted);
+      word-break: break-all;
+    }
+
+    /* -------------------------
+       FOOTER
+    ------------------------- */
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 35px 0 45px;
+    }
+
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      align-items: flex-end;
+    }
+
+    .footer-big {
+      font-family: "Playfair Display", serif;
+      font-size: 30px;
+    }
+
+    .footer-small {
+      font-family: "DM Mono", monospace;
+      font-size: 10px;
+      color: var(--muted);
+      text-align: right;
+      line-height: 1.7;
+    }
+
+    /* -------------------------
+       RESPONSIVE
+    ------------------------- */
+
+    @media (max-width: 760px) {
+
+      .container {
+        width: min(100% - 32px, 1180px);
+      }
+
+      header {
+        padding: 22px 0;
+      }
+
+      .nav-links {
+        gap: 15px;
+        font-size: 11px;
+      }
+
+      .hero {
+        padding: 75px 0 85px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .hero-note {
+        max-width: 320px;
+      }
+
+      .hero::before {
+        width: 300px;
+        height: 300px;
+        right: -180px;
+      }
+
+      .hero::after {
+        width: 180px;
+        height: 180px;
+        right: -85px;
+      }
+
+      .about {
+        padding: 55px 0 75px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .about-text {
+        font-size: 21px;
+      }
+
+      .projects {
+        padding: 55px 0 80px;
+      }
+
+      .section-heading {
+        margin-bottom: 30px;
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-image {
+        height: 230px;
+      }
+
+      .footer-grid {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .footer-small {
+        text-align: left;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+
+  <header>
+    <div class="container nav">
+
+      <div class="logo">
+        KENNY LEUNG
+      </div>
+
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <main>
+
+    <section class="hero">
+
+      <div class="container hero-grid">
+
+        <div>
+          <div class="eyebrow">Media · Culture · Making</div>
+
+          <h1>
+            Thinking<br>
+            through<br>
+            making.
+          </h1>
+        </div>
+
+        <div class="hero-note">
+          <span>01</span><br>
+          Journalism, popular culture,
+          teaching and small experiments
+          with technology.
+          <br><br>
+          Based in Hong Kong.
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section class="about" id="about">
+
+      <div class="container about-grid">
+
+        <div class="eyebrow">
+          About
+        </div>
+
+        <div>
+
+          <div class="about-text">
+
+            Hello. I am <strong>Kenny</strong> — a media practitioner
+            with more than 10 years of experience, and a lecturer
+            in community college.
+
+            <br><br>
+
+            I am the co-founder and Chief Editor of
+            <strong>Wave Zine HK</strong>, an online publication
+            about Hong Kong popular culture. We conduct in-depth
+            interviews with directors and musicians, while also
+            experimenting with new forms of storytelling —
+            from AI-assisted projects to interactive data
+            visualisations.
+
+            <br><br>
+
+            I also make small interactive tools for teaching,
+            using technology not simply as a convenience, but
+            as a way to make students think, participate and
+            see familiar ideas differently.
+
+          </div>
+
+          <div class="socials">
+
+            <a href="https://www.instagram.com/ah_fruit/"
+               target="_blank"
+               rel="noopener">
+              Instagram @ah_fruit ↗
+            </a>
+
+            <a href="https://www.threads.net/@ah_fruit"
+               target="_blank"
+               rel="noopener">
+              Threads @ah_fruit ↗
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROJECTS
+    ========================== -->
+
+    <section class="projects" id="projects">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <h2>Selected work</h2>
+
+          <div class="eyebrow">
+            05 projects
+          </div>
+
+        </div>
+
+
+        <!-- WAVE -->
+
+        <div class="project-group">
+
+          <div class="group-label">
+            <span>01 / Wave Zine HK</span>
+          </div>
+
+          <div class="project-grid">
+
+
+            <!-- 01 -->
+
+            <a class="project"
+               href="https://4gor.wavezinehk.com/"
+               target="_blank"
+               rel="noopener">
+
+              <div class="project-image fourgor">
+
+                <div class="visual-title">
+                  四哥<br>
+                  164
+                </div>
+
+              </div>
+
+              <div class="project-info">
+
+                <div class="project-number">
+                  WAVE / 01
+                </div>
+
+                <div class="project-title">
+                  別了四哥
+                </div>
+
+                <div class="project-description">
+                  An interactive archive of Patrick Tse's
+                  164 screen appearances, tracing seven decades
+                  of Hong Kong film and television history.
+                </div>
+
+                <div class="project-url">
+                  4gor.wavezinehk.com ↗
+                </div>
+
+              </div>
+
+            </a>
+
+
+            <!-- 02 -->
+
+            <a class="project"
+               href="https://kkbox2025.wavezinehk.com/"
+               target="_blank"
+               rel="noopener">
+
+              <div class="project-image kkbox">
+
+                <div class="visual-title">
+                  365 DAYS<br>
+                  18,250 SLOTS
+                </div>
+
+              </div>
+
+              <div class="project-info">
+
+                <div class="project-number">
+                  WAVE / 02
+                </div>
+
+                <div class="project-title">
+                  KKBOX 2025
+                </div>
+
+                <div class="project-description">
+                  A data-driven exploration of Hong Kong's
+                  KKBOX daily chart — 365 days, 50 positions
+                  a day, and the songs and artists that occupied them.
+                </div>
+
+                <div class="project-url">
+                  kkbox2025.wavezinehk.com ↗
+                </div>
+
+              </div>
+
+            </a>
+
+
+            <!-- 03 -->
+
+            <a class="project"
+               href="https://agesofcantopop.wavezinehk.com/"
+               target="_blank"
+               rel="noopener">
+
+              <div class="project-image ages">
+
+                <div class="visual-title">
+                  歲數<br>
+                  如歌
+                </div>
+
+              </div>
+
+              <div class="project-info">
+
+                <div class="project-number">
+                  WAVE / 03
+                </div>
+
+                <div class="project-title">
+                  歲數如歌
+                </div>
+
+                <div class="project-description">
+                  A playful journey through Cantopop:
+                  one age, one Hong Kong pop song, connecting
+                  personal age with the city's musical memory.
+                </div>
+
+                <div class="project-url">
+                  agesofcantopop.wavezinehk.com ↗
+                </div>
+
+              </div>
+
+            </a>
+
+
+            <!-- 04 -->
+
+            <a class="project"
+               href="https://interactive.wavezinehk.com/"
+               target="_blank"
+               rel="noopener">
+
+              <div class="project-image interactive">
+
+                <div class="visual-title">
+                  香港電影<br>
+                  揮春生成器
+                </div>
+
+              </div>
+
+              <div class="project-info">
+
+                <div class="project-number">
+                  WAVE / 04
+                </div>
+
+                <div class="project-title">
+                  香港電影：揮春生成器
+                </div>
+
+                <div class="project-description">
+                  A playful generator built around Hong Kong
+                  film titles. Pick a category, draw a film title,
+                  and turn popular cinema into a Lunar New Year
+                  visual.
+                </div>
+
+                <div class="project-url">
+                  interactive.wavezinehk.com ↗
+                </div>
+
+              </div>
+
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- TEACHING -->
+
+        <div class="project-group">
+
+          <div class="group-label">
+            <span>02 / Teaching</span>
+          </div>
+
+          <div class="project-grid">
+
+
+            <a class="project"
+               href="https://colourthepop-4041.lovable.app/"
+               target="_blank"
+               rel="noopener">
+
+              <div class="project-image colour">
+
+                <div class="visual-title">
+                  COLOUR<br>
+                  THE POP
+                </div>
+
+              </div>
+
+              <div class="project-info">
+
+                <div class="project-number">
+                  TEACHING / 01
+                </div>
+
+                <div class="project-title">
+                  Colour the POP
+                </div>
+
+                <div class="project-description">
+                  An in-class activity for teaching semiology.
+                  Students design the same fictional energy-drink
+                  logo using different colours, then consider how
+                  colour changes meaning.
+                </div>
+
+                <div class="project-url">
+                  colourthepop-4041.lovable.app ↗
+                </div>
+
+              </div>
+
+            </a>
+
+
+            <!-- Empty space intentionally retained -->
+
+            <div></div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer id="contact">
+
+    <div class="container footer-grid">
+
+      <div class="footer-big">
+        Let's make something.
+      </div>
+
+      <div class="footer-small">
+        KENNY LEUNG<br>
+        Media · Culture · Interactive
+        <br><br>
+        © 2026
+      </div>
+
+    </div>
+
+  </footer>
+
+
+</body>
+</html>
+```
